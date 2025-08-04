@@ -18,8 +18,7 @@ Um sistema de desktop completo para o gerenciamento de registros de alunos, dese
 
 ## 📸 Screenshot
 
-![Screenshot do Sistema](caminho/para/sua/imagem.png)
-*(Substitua esta linha pela imagem da sua aplicação)*
+![Screenshot do Sistema](Screenshot.png)
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -99,7 +98,8 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ## ✍️ Autor
 
-*Substitua esta seção pelo seu nome e informações de contato (LinkedIn, email, etc.)*
+Nome: Bryan Nicholas Fontinele Miranda
+Email: nicholas.fm4@gmail.com
 
 ---
 **Bryan Nicholas Fontinele Miranda**
