@@ -1,5 +1,6 @@
 import sqlite3
 
+
 class SistemaDeRegistro:
     def __init__(self, db_name='estudantes.db'):
         """
