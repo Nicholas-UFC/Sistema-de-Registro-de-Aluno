@@ -2,14 +2,16 @@ import sqlite3
 
 
 class SistemaDeRegistro:
-    def __init__(self, db_name='estudantes.db'):
+    def __init__(self, db_name="estudantes.db"):
         """
         Inicializa a classe, definindo o nome do arquivo do banco de dados.
         """
         self.db_name = db_name
         self._create_table()
 
-    def _execute_query(self, query, params=(), commit=False, fetchone=False, fetchall=False):
+    def _execute_query(
+        self, query, params=(), commit=False, fetchone=False, fetchall=False
+    ):
         """
         Método auxiliar privado para executar todas as consultas de forma segura.
         Ele gerencia a conexão, o cursor, os erros, o commit e a busca de dados.
@@ -19,27 +21,27 @@ class SistemaDeRegistro:
             with sqlite3.connect(self.db_name) as conn:
                 cursor = conn.cursor()
                 cursor.execute(query, params)
-                
+
                 # 'with conn:' já faz o commit em caso de sucesso ou rollback em caso de erro.
                 if commit:
                     pass
 
                 if fetchone:
                     return cursor.fetchone()
-                
+
                 if fetchall:
                     return cursor.fetchall()
-                
+
                 # Retorna True para operações de escrita (INSERT, UPDATE, DELETE) bem-sucedidas.
                 return True
-        
+
         except sqlite3.Error as e:
             # Em caso de erro, imprime no console para depuração e retorna False.
             print(f"Erro no Banco de Dados: {e}")
             return False
-            
+
     def _create_table(self):
-        query = '''CREATE TABLE IF NOT EXISTS estudantes (
+        query = """CREATE TABLE IF NOT EXISTS estudantes (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     nome TEXT NOT NULL,
                     email TEXT UNIQUE NOT NULL, -- Garante que cada email seja único
@@ -48,7 +50,7 @@ class SistemaDeRegistro:
                     data_nascimento TEXT NOT NULL,
                     endereco TEXT NOT NULL,
                     curso TEXT NOT NULL,
-                    picture TEXT NOT NULL)'''
+                    picture TEXT NOT NULL)"""
         self._execute_query(query)
 
     def registro_de_estudante(self, estudante_data):

@@ -73,16 +73,9 @@ Siga os passos abaixo para executar o sistema em sua máquina local.
     ```
 
 3.  **Instale as dependências:**
-    O projeto utiliza as bibliotecas `Pillow` e `tkcalendar`. Crie um arquivo `requirements.txt` com o seguinte comando:
+    O projeto utiliza as bibliotecas que estão nos arquivos de requirements.txt e requirements_dev.txt tem as bibliotecas que ajuda o dev a codar. Instale as dependências a partir deste arquivo (ou instale-as manualmente):
     ```bash
-    pip freeze > requirements.txt
-    ```
-    Em seguida, instale as dependências a partir deste arquivo (ou instale-as manualmente):
-    ```bash
-    pip install -r requirements.txt
-    
-    # Instalação manual, caso prefira
-    # pip install Pillow tkcalendar
+    pip install -r requirements_dev.txt
     ```
 
 4.  **Execute a aplicação:**
